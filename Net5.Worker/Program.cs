@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Net5.Worker.Parser;
+using Net5.Worker.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,8 @@ namespace Net5.Worker
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddSingleton<ICountryService, CountryService>();
+                    services.AddSingleton<IHttpClientService, HttpClientService>();
                 });
     }
 }

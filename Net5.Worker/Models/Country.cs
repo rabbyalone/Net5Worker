@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Net5.Worker.Models
 {
-    internal class Country
+    public class Country
     {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Border { get; set; }
+        public string[] Languages { get; set; }
     }
 }
